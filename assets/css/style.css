@@ -1,0 +1,138 @@
+/* assets/css/style.css */
+
+/* 1. Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap');
+
+/* 2. Definisikan Variabel Warna (Cara Modern & Mudah Dikelola) */
+:root {
+    --primary-color: #003049;  /* Biru Dongker */
+    --secondary-color: #6c757d; /* Abu-abu sekunder dari Bootstrap */
+    --danger-color: #d62828;   /* Merah Bata */
+    --warning-color: #f77f00;  /* Kuning Mustard */
+    --light-bg: #f8f9fa;      /* Latar belakang terang */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* 3. Terapkan Font ke Seluruh Situs */
+body {
+    font-family: var(--font-body);
+    background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 600; /* Sedikit lebih tebal */
+}
+
+/* 4. Override Warna Komponen Bootstrap */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #004263; /* Sedikit lebih terang saat disentuh */
+    border-color: #004263;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.table-dark {
+    background-color: var(--primary-color) !important;
+    border-color: #004263;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: var(--font-heading);
+}
+
+/* 5. Tambahan Efek Visual */
+.card {
+    border: 0; /* Hapus border default card */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efek sedikit terangkat */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+}
+
+/* Style untuk Hero Section di Homepage */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-section h1 {
+    font-weight: 700; /* Membuat judul lebih tebal dan menonjol */
+}
+
+.card .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Style untuk Carousel Buku Populer */
+.carousel-item {
+    /* Sedikit transisi agar perpindahan slide mulus */
+    transition: transform .6s ease-in-out;
+}
+
+.carousel-item .row {
+    min-height: 400px; /* Menjaga tinggi carousel tetap konsisten */
+}
+
+.deskripsi-carousel {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Style untuk Hero Section dengan Video Background */
+.hero-section {
+    height: 75vh; /* Tinggi hero section sekitar 75% dari tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Pastikan video tidak keluar dari container */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Meletakkan video di lapisan paling belakang */
+}
+
+/* Lapisan overlay gelap agar teks mudah dibaca */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Memastikan konten berada di atas video dan overlay */
+}
