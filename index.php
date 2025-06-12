@@ -26,8 +26,8 @@ while ($data = mysqli_fetch_assoc($query_populer)) {
         Browser Anda tidak mendukung tag video.
     </video>
 
-    <div class="hero-content text-center text-white">
-        <div class="container-fluid py-5">
+    <div class="hero-content text-center text-white d-flex align-items-center justify-content-center">
+        <div class="py-5">
             <h1 class="display-5 fw-bold">Jelajahi Dunia Melalui Kata</h1>
             <p class="fs-4">Perpustakaan Digital kami menyediakan akses tak terbatas ke lautan pengetahuan dan imajinasi.</p>
             <a href="katalog.php" class="btn btn-primary btn-lg">Mulai Menjelajah <i class="fas fa-arrow-right"></i></a>

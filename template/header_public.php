@@ -32,4 +32,4 @@
   </div>
 </nav>
 
-<main class="container my-4">
+<main class="container">

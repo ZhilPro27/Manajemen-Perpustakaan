@@ -136,3 +136,20 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     position: relative;
     z-index: 1; /* Memastikan konten berada di atas video dan overlay */
 }
+
+/* Style Khusus untuk Latar Belakang Halaman Login */
+.login-bg {
+    /* Menentukan gambar latar, dengan overlay gradient hitam transparan */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/login-bg.jpeg');
+
+    /* Properti untuk membuat gambar menjadi fullscreen dan tetap */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Kita tidak perlu lagi warna latar pada .login-container */
+.login-container {
+    background-color: transparent; 
+}
