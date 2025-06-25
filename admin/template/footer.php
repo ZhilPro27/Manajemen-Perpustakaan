@@ -37,6 +37,67 @@ function konfirmasiKembalikan(url) {
         }
     })
 }
+
+// Fungsi untuk membuat Toast dengan SweetAlert2
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end', // Posisi di pojok kanan atas
+  showConfirmButton: false,
+  timer: 3000, // Hilang setelah 3 detik
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+});
+
+// Ambil status dari URL menggunakan PHP
+const status = <?php echo json_encode($_GET['status'] ?? null); ?>;
+
+// Tampilkan toast berdasarkan status
+if (status) {
+  let title = '';
+  switch (status) {
+    // Notifikasi untuk Buku
+    case 'sukses_tambah_buku':
+      title = 'Buku baru berhasil ditambahkan.';
+      break;
+    case 'sukses_edit_buku':
+      title = 'Data buku berhasil diperbarui.';
+      break;
+    case 'sukses_hapus_buku':
+      title = 'Data buku telah dihapus.';
+      break;
+
+    // Notifikasi untuk Anggota
+    case 'sukses_tambah_anggota':
+      title = 'Anggota baru berhasil ditambahkan.';
+      break;
+    case 'sukses_edit_anggota':
+      title = 'Data anggota telah diperbarui.';
+      break;
+    case 'sukses_hapus_anggota':
+      title = 'Data anggota telah dihapus.';
+      break;
+
+    // Notifikasi untuk Transaksi
+    case 'sukses_pinjam':
+      title = 'Peminjaman berhasil dicatat.';
+      break;
+    case 'sukses_kembali':
+      title = 'Buku telah berhasil dikembalikan.';
+      break;
+  }
+
+  if (title) {
+    Toast.fire({
+      icon: 'success',
+      title: title
+    });
+  }
+
+  history.replaceState(null, null, window.location.pathname);
+}
 </script>
 </body>
 </html>

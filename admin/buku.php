@@ -25,30 +25,6 @@ $query = mysqli_query($koneksi, $sql);
 
     <hr>
 
-    <?php if (isset($_GET['status'])): ?>
-        <?php if ($_GET['status'] == 'sukses_tambah_buku'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data buku baru telah ditambahkan.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php elseif ($_GET['status'] == 'sukses_edit_buku'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data buku telah diperbarui.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php elseif ($_GET['status'] == 'sukses_hapus_buku'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data buku telah dihapus.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php elseif ($_GET['status'] == 'gagal_hapus'): ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Gagal!</strong> Data buku tidak dapat dihapus.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
-
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead class="table-dark">

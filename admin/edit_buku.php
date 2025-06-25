@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Query UPDATE
     $sql_update = "UPDATE buku SET judul=?, pengarang=?, penerbit=?, tahun_terbit=?, isbn=?, deskripsi=?, stok=?, gambar=? WHERE id_buku=?";
     $stmt_update = mysqli_prepare($koneksi, $sql_update);
-    mysqli_stmt_bind_param($stmt_update, "sssisissi", $judul, $pengarang, $penerbit, $tahun_terbit, $isbn, $deskripsi, $stok, $nama_gambar_baru, $id_buku);
+    mysqli_stmt_bind_param($stmt_update, "sssissisi", $judul, $pengarang, $penerbit, $tahun_terbit, $isbn, $deskripsi, $stok, $nama_gambar_baru, $id_buku);
 
     if (mysqli_stmt_execute($stmt_update)) {
         header("Location: buku.php?status=sukses_edit_buku");

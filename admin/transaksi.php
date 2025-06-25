@@ -32,24 +32,7 @@ $query = mysqli_query($koneksi, $sql);
         </a>
     </div>
     <hr>
-    <?php if (isset($_GET['status'])): ?>
-        <?php if ($_GET['status'] == 'sukses_tambah'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data anggota baru telah ditambahkan.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php elseif ($_GET['status'] == 'sukses_edit'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data anggota telah diperbarui.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php elseif ($_GET['status'] == 'sukses_hapus'): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Berhasil!</strong> Data anggota telah dihapus.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
+
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
